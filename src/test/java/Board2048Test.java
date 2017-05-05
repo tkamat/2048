@@ -5,9 +5,11 @@ import java.util.Random;
 
 
 public class Board2048Test {
+
+    private Board2048 test = new Board2048();
+
     @Test
     public void testBoardHasArray() {
-        Board2048 test = new Board2048();
         int[][] board = test.getBoard();
         assertEquals(board.length, 4);
         assertEquals(board[0].length, 4);
@@ -15,7 +17,6 @@ public class Board2048Test {
 
     @Test
     public void testStartingValuesAssigned() {
-        Board2048 test = new Board2048();
         Point a = new Point(1, 2);
         Point b = new Point(0, 3);
         Point c = new Point(3, 2);
@@ -24,6 +25,11 @@ public class Board2048Test {
         assertEquals(board[1][2], 2);
         assertEquals(board[0][3], 2);
         assertEquals(board[3][2], 2);
+    }
+
+    @Test
+    public void testAddingNewValues() {
+
     }
 
 }
