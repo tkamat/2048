@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Board2048Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2017-05-05T01:28:57" hostname="tushaar-Lenovo-Z50-70" time="0.002">
+<testsuite name="Board2048Test" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-05-06T19:23:02" hostname="tushaar-Lenovo-Z50-70" time="0.006">
   <properties/>
-  <testcase name="testStartingValuesAssigned" classname="Board2048Test" time="0.002"/>
+  <testcase name="testStartingNumbers" classname="Board2048Test" time="0.002"/>
+  <testcase name="testClearBoard" classname="Board2048Test" time="0.0"/>
+  <testcase name="testAddingNewNumbers" classname="Board2048Test" time="0.0"/>
+  <testcase name="testMoveLeft" classname="Board2048Test" time="0.0"/>
   <testcase name="testBoardHasArray" classname="Board2048Test" time="0.0"/>
+  <testcase name="testMovePoint" classname="Board2048Test" time="0.0"/>
+  <testcase name="testAddNumberFromEdge" classname="Board2048Test" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
