@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tkamat.Board2048Test" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-05-08T02:49:22" hostname="tushaar-Lenovo-Z50-70" time="0.007">
+  <properties/>
+  <testcase name="testStartingNumbers" classname="com.tkamat.Board2048Test" time="0.002"/>
+  <testcase name="testClearBoard" classname="com.tkamat.Board2048Test" time="0.0"/>
+  <testcase name="testAddingNewNumbers" classname="com.tkamat.Board2048Test" time="0.0"/>
+  <testcase name="testMoveLeft" classname="com.tkamat.Board2048Test" time="0.001"/>
+  <testcase name="testBoardHasArray" classname="com.tkamat.Board2048Test" time="0.0"/>
+  <testcase name="testMovePoint" classname="com.tkamat.Board2048Test" time="0.0"/>
+  <testcase name="testAddNumberFromEdge" classname="com.tkamat.Board2048Test" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

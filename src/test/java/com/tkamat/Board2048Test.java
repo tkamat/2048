@@ -3,6 +3,9 @@ package com.tkamat;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import com.tkamat.game.Board2048;
+import com.tkamat.game.Point;
+
 public class Board2048Test {
 
     @Test

@@ -87,9 +87,9 @@ public class Board2048 {
                         possiblePoints.add(new Point(i, j));
                 }
             }
-        }
 
         Random rand = new Random();
         addNewNumber(possiblePoints.get(rand.nextInt(possiblePoints.size())), num);
+        }
     }
 }
