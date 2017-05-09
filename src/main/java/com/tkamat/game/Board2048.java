@@ -19,11 +19,19 @@ public class Board2048 {
      */
     public Board2048() {
         this.board = new int[BOARD_SIZE][BOARD_SIZE];
-        this.assignStartingNumbers(getRandomPoint(), getRandomPoint(), getRandomPoint());
+        this.assignStartingNumbers(getRandomPoint(), getRandomPoint());
     }
 
     public int[][] getBoard() {
         return this.board;
+    }
+
+    public void setBoard(int[][] board) {
+        this.board = board;
+    }
+
+    public int getValueAtPoint(Point p) {
+        return board[p.getRow()][p.getCol()];
     }
 
     /**
@@ -51,25 +59,22 @@ public class Board2048 {
      *            first point
      * @param b
      *            second point
-     * @param c
-     *            third point
      */
-    public void assignStartingNumbers(Point a, Point b, Point c) {
+    public void assignStartingNumbers(Point a, Point b) {
         board[a.getRow()][a.getCol()] = 2;
         board[b.getRow()][b.getCol()] = 2;
-        board[c.getRow()][c.getCol()] = 2;
     }
 
     /**
      * Adds a new number to board
      *
-     * @param a
+     * @param p
      *            Point where mum is added
      * @param num
      *            value of number to be added
      */
-    public void addNewNumber(Point a, int num) {
-        board[a.getRow()][a.getCol()] = num;
+    public void addNewNumber(Point p, int num) {
+        board[p.getRow()][p.getCol()] = num;
     }
 
     /**
@@ -88,8 +93,88 @@ public class Board2048 {
                 }
             }
 
-        Random rand = new Random();
-        addNewNumber(possiblePoints.get(rand.nextInt(possiblePoints.size())), num);
+            Random rand = new Random();
+            addNewNumber(possiblePoints.get(rand.nextInt(possiblePoints.size())), num);
         }
     }
+
+    public void movePoint(Point source, Point dest) {
+        if (this.getValueAtPoint(dest) == 0) {
+            board[dest.getRow()][dest.getCol()] = board[source.getRow()][source.getCol()];
+            board[source.getRow()][source.getCol()] = 0;
+        }
+        else if (this.getValueAtPoint(source) == this.getValueAtPoint(dest)) {
+            board[dest.getRow()][dest.getCol()] = board[source.getRow()][source.getCol()] * 2;
+            board[source.getRow()][source.getCol()] = 0;
+        }
+    }
+
+    public void moveLeft() {
+        Point currentPoint;
+        int origNum;
+        for (int col = 1; col < board[0].length; col++) {
+            for (int row = 0; row < board.length; row++) {
+                if (board[row][col] > 0) {
+                    currentPoint = new Point(row, col);
+                    origNum = board[row][col];
+                    while (currentPoint.getCol() > 0 && this.getValueAtPoint(currentPoint) == origNum) {
+                        this.movePoint(currentPoint, new Point(currentPoint.getRow(), currentPoint.getCol() - 1));
+                        currentPoint = new Point(currentPoint.getRow(), currentPoint.getCol() - 1);
+                    }
+                }
+            }
+        }
+    }
+
+    public void moveRight() {
+        Point currentPoint;
+        int origNum;
+        for (int col = 2; col >= 0; col--) {
+            for (int row = 0; row < board.length; row++) {
+                if (board[row][col] > 0) {
+                    currentPoint = new Point(row, col);
+                    origNum = board[row][col];
+                    while (currentPoint.getCol() < 3 && this.getValueAtPoint(currentPoint) == origNum) {
+                        this.movePoint(currentPoint, new Point(currentPoint.getRow(), currentPoint.getCol() + 1));
+                        currentPoint = new Point(currentPoint.getRow(), currentPoint.getCol() + 1);
+                    }
+                }
+            }
+        }
+    }
+
+    public void moveUp() {
+        Point currentPoint;
+        int origNum;
+        for (int row = 1; row < board.length; row++) {
+            for (int col = 0; col < board[0].length; col++) {
+                if (board[row][col] > 0) {
+                    currentPoint = new Point(row, col);
+                    origNum = board[row][col];
+                    while (currentPoint.getRow() > 0 && this.getValueAtPoint(currentPoint) == origNum) {
+                        this.movePoint(currentPoint, new Point(currentPoint.getRow() - 1, currentPoint.getCol()));
+                        currentPoint = new Point(currentPoint.getRow() - 1, currentPoint.getCol());
+                    }
+                }
+            }
+        }
+    }
+
+    public void moveDown() {
+        Point currentPoint;
+        int origNum;
+        for (int row = 2; row >= 0; row--) {
+            for (int col = 0; col < board[0].length; col++) {
+                if (board[row][col] > 0) {
+                    currentPoint = new Point(row, col);
+                    origNum = board[row][col];
+                    while (currentPoint.getRow() < 3 && this.getValueAtPoint(currentPoint) == origNum) {
+                        this.movePoint(currentPoint, new Point(currentPoint.getRow() + 1, currentPoint.getCol()));
+                        currentPoint = new Point(currentPoint.getRow() + 1, currentPoint.getCol());
+                    }
+                }
+            }
+        }
+    }
+
 }
