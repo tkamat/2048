@@ -11,14 +11,14 @@ public class Point {
     int col;
 
     /**
-     * @param x
+     * @param row
      *            x coordinate
-     * @param y
+     * @param col
      *            y coordinate
      */
-    public Point(int x, int y) {
-        this.row = x;
-        this.col = y;
+    public Point(int row, int col) {
+        this.row = row;
+        this.col = col;
     }
 
     /**
