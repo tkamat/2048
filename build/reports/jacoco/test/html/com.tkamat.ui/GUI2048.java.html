@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GUI2048.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">2048</a> &gt; <a href="index.source.html" class="el_package">com.tkamat.ui</a> &gt; <span class="el_source">GUI2048.java</span></div><h1>GUI2048.java</h1><pre class="source lang-java linenums">package com.tkamat.ui;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.HashMap;
+
+import javax.swing.*;
+
+import com.tkamat.game.Board2048;
+
+/**
+ * UI for 2048 game
+ *
+ * @author Tushaar Kamat
+ */
+public class GUI2048 extends JFrame {
+
+    private HashMap&lt;Integer, Color&gt; colorMap;
+    private Board2048 board;
+    private JLabel[][] tiles;
+
+    /**
+     * Constructor for GUI class.
+     */
+    public GUI2048(String name) {
+<span class="nc" id="L26">        super(name);</span>
+
+<span class="nc" id="L28">        this.initiaizeColorMap();</span>
+<span class="nc" id="L29">        board = new Board2048();</span>
+
+<span class="nc" id="L31">        tiles = createTiles();</span>
+
+<span class="nc" id="L33">        JPanel panel = new JPanel();</span>
+<span class="nc" id="L34">        panel.setLayout(new GridLayout(4, 4, 10, 10));</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        for (int i = 0; i &lt; tiles.length; i++) {</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">            for (int j = 0; j &lt; tiles[0].length; j++) {</span>
+<span class="nc" id="L37">                panel.add(tiles[i][j]);</span>
+            }
+        }
+
+<span class="nc" id="L41">        panel.getInputMap().put(KeyStroke.getKeyStroke(&quot;H&quot;), &quot;moveLeft&quot;);</span>
+<span class="nc" id="L42">        panel.getActionMap().put(&quot;moveLeft&quot;, new AbstractAction() {</span>
+            @Override
+            public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L45">                board.moveLeft();</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">                for (int i = 0; i &lt; tiles.length; i++) {</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">                    for (int j = 0; j &lt; tiles.length; j++) {</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">                        if (board.getBoard()[i][j] &gt; 0) {</span>
+<span class="nc" id="L49">                            tiles[i][j].setText(&quot;&quot; + board.getBoard()[i][j]);</span>
+                        }
+                        else {
+<span class="nc" id="L52">                            tiles[i][j].setText(&quot;&quot;);</span>
+                        }
+<span class="nc" id="L54">                        tiles[i][j].setBackground(colorMap.get(new Integer(board.getBoard()[i][j])));</span>
+                    }
+                }
+<span class="nc" id="L57">            }</span>
+
+        });
+<span class="nc" id="L60">        panel.getInputMap().put(KeyStroke.getKeyStroke(&quot;L&quot;), &quot;moveRight&quot;);</span>
+<span class="nc" id="L61">        panel.getActionMap().put(&quot;moveRight&quot;, new AbstractAction() {</span>
+            @Override
+            public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L64">                board.moveRight();</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">                for (int i = 0; i &lt; tiles.length; i++) {</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">                    for (int j = 0; j &lt; tiles.length; j++) {</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">                        if (board.getBoard()[i][j] &gt; 0) {</span>
+<span class="nc" id="L68">                            tiles[i][j].setText(&quot;&quot; + board.getBoard()[i][j]);</span>
+                        }
+                        else {
+<span class="nc" id="L71">                            tiles[i][j].setText(&quot;&quot;);</span>
+                        }
+<span class="nc" id="L73">                        tiles[i][j].setBackground(colorMap.get(new Integer(board.getBoard()[i][j])));</span>
+                    }
+                }
+<span class="nc" id="L76">            }</span>
+        });
+<span class="nc" id="L78">        panel.getInputMap().put(KeyStroke.getKeyStroke(&quot;K&quot;), &quot;moveUp&quot;);</span>
+<span class="nc" id="L79">        panel.getActionMap().put(&quot;moveUp&quot;, new AbstractAction() {</span>
+            @Override
+            public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L82">                board.moveUp();</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">                for (int i = 0; i &lt; tiles.length; i++) {</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">                    for (int j = 0; j &lt; tiles.length; j++) {</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">                        if (board.getBoard()[i][j] &gt; 0) {</span>
+<span class="nc" id="L86">                            tiles[i][j].setText(&quot;&quot; + board.getBoard()[i][j]);</span>
+                        }
+                        else {
+<span class="nc" id="L89">                            tiles[i][j].setText(&quot;&quot;);</span>
+                        }
+<span class="nc" id="L91">                        tiles[i][j].setBackground(colorMap.get(new Integer(board.getBoard()[i][j])));</span>
+                    }
+                }
+<span class="nc" id="L94">            }</span>
+
+        });
+<span class="nc" id="L97">        panel.getInputMap().put(KeyStroke.getKeyStroke(&quot;J&quot;), &quot;moveDown&quot;);</span>
+<span class="nc" id="L98">        panel.getActionMap().put(&quot;moveDown&quot;, new AbstractAction() {</span>
+            @Override
+            public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L101">                board.moveDown();</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">                for (int i = 0; i &lt; tiles.length; i++) {</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">                    for (int j = 0; j &lt; tiles.length; j++) {</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">                        if (board.getBoard()[i][j] &gt; 0) {</span>
+<span class="nc" id="L105">                            tiles[i][j].setText(&quot;&quot; + board.getBoard()[i][j]);</span>
+                        }
+                        else {
+<span class="nc" id="L108">                            tiles[i][j].setText(&quot;&quot;);</span>
+                        }
+<span class="nc" id="L110">                        tiles[i][j].setBackground(colorMap.get(new Integer(board.getBoard()[i][j])));</span>
+                    }
+                }
+<span class="nc" id="L113">            }</span>
+        });
+
+<span class="nc" id="L116">        this.setSize(400, 400);</span>
+<span class="nc" id="L117">        this.add(panel);</span>
+<span class="nc" id="L118">        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L119">        this.setVisible(true);</span>
+<span class="nc" id="L120">    }</span>
+
+    private JLabel[][] createTiles() {
+<span class="nc" id="L123">        JLabel[][] tiles = new JLabel[Board2048.BOARD_SIZE][Board2048.BOARD_SIZE];</span>
+<span class="nc bnc" id="L124" title="All 2 branches missed.">        for (int i = 0; i &lt; tiles.length; i++) {</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">            for (int j = 0; j &lt; tiles[0].length; j++) {</span>
+<span class="nc" id="L126">                tiles[i][j] = new JLabel(&quot;&quot;, SwingConstants.CENTER);</span>
+<span class="nc" id="L127">                tiles[i][j].setFont(new Font(&quot;Helvetica&quot;, Font.BOLD, 72));</span>
+<span class="nc" id="L128">                tiles[i][j].setBackground(Color.LIGHT_GRAY);</span>
+<span class="nc" id="L129">                tiles[i][j].setOpaque(true);</span>
+<span class="nc bnc" id="L130" title="All 2 branches missed.">                if (board.getBoard()[i][j] &gt; 0) {</span>
+<span class="nc" id="L131">                    tiles[i][j].setText(&quot;&quot; + board.getBoard()[i][j]);</span>
+                }
+<span class="nc" id="L133">                tiles[i][j].setBackground(colorMap.get(new Integer(board.getBoard()[i][j])));</span>
+            }
+        }
+<span class="nc" id="L136">        return tiles;</span>
+    }
+
+    private void initiaizeColorMap() {
+<span class="nc" id="L140">        colorMap = new HashMap&lt;Integer, Color&gt;();</span>
+<span class="nc" id="L141">        colorMap.put(new Integer(0), Color.LIGHT_GRAY);</span>
+<span class="nc" id="L142">        colorMap.put(new Integer(2), new Color(239, 190, 110));</span>
+<span class="nc" id="L143">        colorMap.put(new Integer(4), new Color(232, 148, 11));</span>
+<span class="nc" id="L144">        colorMap.put(new Integer(8), new Color(132, 83, 2));</span>
+<span class="nc" id="L145">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>

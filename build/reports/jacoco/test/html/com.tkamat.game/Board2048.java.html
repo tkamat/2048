@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Board2048.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">2048</a> &gt; <a href="index.source.html" class="el_package">com.tkamat.game</a> &gt; <span class="el_source">Board2048.java</span></div><h1>Board2048.java</h1><pre class="source lang-java linenums">package com.tkamat.game;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
+/**
+ * 2048 board
+ *
+ * @author Tushaar Kamat
+ */
+public class Board2048 {
+
+    public static final int BOARD_SIZE = 4;
+
+    private int[][] board;
+    private int score;
+    private boolean movePossible;
+
+    /**
+     * Constructor for objects of Board2048 class
+     */
+<span class="fc" id="L24">    public Board2048() {</span>
+<span class="fc" id="L25">        this.board = new int[BOARD_SIZE][BOARD_SIZE];</span>
+<span class="fc" id="L26">        this.assignStartingNumbers(getRandomPoint(), getRandomPoint());</span>
+<span class="fc" id="L27">        this.score = 0;</span>
+<span class="fc" id="L28">        this.movePossible = true;</span>
+<span class="fc" id="L29">    }</span>
+
+    public int[][] getBoard() {
+<span class="fc" id="L32">        return this.board;</span>
+    }
+
+    public void setBoard(int[][] board) {
+<span class="fc" id="L36">        this.board = board;</span>
+<span class="fc" id="L37">    }</span>
+
+    /**
+     * @return movePossible
+     */
+    public boolean isMovePossible() {
+<span class="fc" id="L43">        return movePossible;</span>
+    }
+
+    /**
+     * @param movePossible the movePossible to set
+     */
+    public void setMovePossible(boolean movePossible) {
+<span class="nc" id="L50">        this.movePossible = movePossible;</span>
+<span class="nc" id="L51">    }</span>
+
+    /**
+     * @return the score
+     */
+    public int getScore() {
+<span class="fc" id="L57">        return score;</span>
+    }
+
+    /**
+     * @param score the score to set
+     */
+    public void setScore(int score) {
+<span class="nc" id="L64">        this.score = score;</span>
+<span class="nc" id="L65">    }</span>
+
+    public int getValueAtPoint(Point p) {
+<span class="fc" id="L68">        return board[p.getRow()][p.getCol()];</span>
+    }
+
+    /**
+     * Returns a randomly selected point on the board
+     *
+     * @return random point on the board
+     */
+    public static Point getRandomPoint() {
+<span class="fc" id="L77">        Random rand = new Random();</span>
+<span class="fc" id="L78">        return new Point(rand.nextInt(BOARD_SIZE), rand.nextInt(BOARD_SIZE));</span>
+    }
+
+    public void clearBoard() {
+<span class="fc bfc" id="L82" title="All 2 branches covered.">        for (int i = 0; i &lt; board.length; i++) {</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">            for (int j = 0; j &lt; board[0].length; j++) {</span>
+<span class="fc" id="L84">                board[i][j] = 0;</span>
+            }
+        }
+<span class="fc" id="L87">    }</span>
+
+    /**
+     *
+     *
+     * @param a
+     *            first point
+     * @param b
+     *            second point
+     */
+    public void assignStartingNumbers(Point a, Point b) {
+<span class="fc" id="L98">        board[a.getRow()][a.getCol()] = 2;</span>
+<span class="fc" id="L99">        board[b.getRow()][b.getCol()] = 2;</span>
+<span class="fc" id="L100">    }</span>
+
+    /**
+     * Adds a new number to board
+     *
+     * @param p
+     *            Point where mum is added
+     * @param num
+     *            value of number to be added
+     */
+    public void addNewNumber(Point p, int num) {
+<span class="fc" id="L111">        board[p.getRow()][p.getCol()] = num;</span>
+<span class="fc" id="L112">    }</span>
+
+    /**
+     * Adds a number to the edge of the 2048 board
+     *
+     * @param num
+     *            value of number to add
+     */
+    public void addPossibleNumber(int num) {
+<span class="fc" id="L121">        List&lt;Point&gt; possiblePoints = new ArrayList&lt;Point&gt;();</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">        for (int i = 0; i &lt; board.length; i++) {</span>
+<span class="fc bfc" id="L123" title="All 2 branches covered.">            for (int j = 0; j &lt; board[0].length; j++) {</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">                if (board[i][j] == 0)</span>
+<span class="fc" id="L125">                    possiblePoints.add(new Point(i, j));</span>
+            }
+
+<span class="fc bfc" id="L128" title="All 2 branches covered.">            if (possiblePoints.size() &gt; 0) {</span>
+<span class="fc" id="L129">                Random rand = new Random();</span>
+<span class="fc" id="L130">                addNewNumber(possiblePoints.get(rand.nextInt(possiblePoints.size())), num);</span>
+            }
+        }
+<span class="fc" id="L133">    }</span>
+
+    public void movePoint(Point source, Point dest) {
+<span class="fc bfc" id="L136" title="All 2 branches covered.">        if (this.getValueAtPoint(dest) == 0) {</span>
+<span class="fc" id="L137">            board[dest.getRow()][dest.getCol()] = board[source.getRow()][source.getCol()];</span>
+<span class="fc" id="L138">            board[source.getRow()][source.getCol()] = 0;</span>
+        }
+<span class="fc bfc" id="L140" title="All 2 branches covered.">        else if (this.getValueAtPoint(source) == this.getValueAtPoint(dest)) {</span>
+<span class="fc" id="L141">            board[dest.getRow()][dest.getCol()] = board[source.getRow()][source.getCol()] * 2;</span>
+<span class="fc" id="L142">            board[source.getRow()][source.getCol()] = 0;</span>
+<span class="fc" id="L143">            score += this.getValueAtPoint(dest);</span>
+        }
+<span class="fc" id="L145">    }</span>
+
+    public void moveLeft() {
+<span class="fc" id="L148">        boolean reallyMoved = false;</span>
+        Point currentPoint;
+        int origNum;
+<span class="fc bfc" id="L151" title="All 2 branches covered.">        for (int col = 1; col &lt; board[0].length; col++) {</span>
+<span class="fc bfc" id="L152" title="All 2 branches covered.">            for (int row = 0; row &lt; board.length; row++) {</span>
+<span class="fc bfc" id="L153" title="All 2 branches covered.">               if (board[row][col] &gt; 0) {</span>
+<span class="fc" id="L154">                    currentPoint = new Point(row, col);</span>
+<span class="fc" id="L155">                    origNum = board[row][col];</span>
+<span class="fc bfc" id="L156" title="All 4 branches covered.">                    while (currentPoint.getCol() &gt; 0 &amp;&amp; this.getValueAtPoint(currentPoint) == origNum) {</span>
+<span class="fc" id="L157">                        this.movePoint(currentPoint, new Point(currentPoint.getRow(), currentPoint.getCol() - 1));</span>
+<span class="fc" id="L158">                        currentPoint = new Point(currentPoint.getRow(), currentPoint.getCol() - 1);</span>
+<span class="fc" id="L159">                        reallyMoved = true;</span>
+                    }
+                }
+            }
+        }
+<span class="pc bpc" id="L164" title="1 of 2 branches missed.">        if (reallyMoved) {</span>
+<span class="fc" id="L165">            this.addPossibleNumber(2);</span>
+        }
+<span class="fc" id="L167">    }</span>
+
+    public void moveRight() {
+<span class="fc" id="L170">        boolean reallyMoved = false;</span>
+        Point currentPoint;
+        int origNum;
+<span class="fc bfc" id="L173" title="All 2 branches covered.">        for (int col = 2; col &gt;= 0; col--) {</span>
+<span class="fc bfc" id="L174" title="All 2 branches covered.">            for (int row = 0; row &lt; board.length; row++) {</span>
+<span class="fc bfc" id="L175" title="All 2 branches covered.">                if (board[row][col] &gt; 0) {</span>
+<span class="fc" id="L176">                    currentPoint = new Point(row, col);</span>
+<span class="fc" id="L177">                    origNum = board[row][col];</span>
+<span class="fc bfc" id="L178" title="All 4 branches covered.">                    while (currentPoint.getCol() &lt; 3 &amp;&amp; this.getValueAtPoint(currentPoint) == origNum) {</span>
+<span class="fc" id="L179">                        this.movePoint(currentPoint, new Point(currentPoint.getRow(), currentPoint.getCol() + 1));</span>
+<span class="fc" id="L180">                        currentPoint = new Point(currentPoint.getRow(), currentPoint.getCol() + 1);</span>
+<span class="fc" id="L181">                        reallyMoved = true;</span>
+                    }
+                }
+            }
+        }
+<span class="pc bpc" id="L186" title="1 of 2 branches missed.">        if (reallyMoved) {</span>
+<span class="fc" id="L187">            this.addPossibleNumber(2);</span>
+        }
+<span class="fc" id="L189">    }</span>
+
+    public void moveUp() {
+<span class="fc" id="L192">        boolean reallyMoved = false;</span>
+        Point currentPoint;
+        int origNum;
+<span class="fc bfc" id="L195" title="All 2 branches covered.">        for (int row = 1; row &lt; board.length; row++) {</span>
+<span class="fc bfc" id="L196" title="All 2 branches covered.">            for (int col = 0; col &lt; board[0].length; col++) {</span>
+<span class="fc bfc" id="L197" title="All 2 branches covered.">                if (board[row][col] &gt; 0) {</span>
+<span class="fc" id="L198">                    currentPoint = new Point(row, col);</span>
+<span class="fc" id="L199">                    origNum = board[row][col];</span>
+<span class="fc bfc" id="L200" title="All 4 branches covered.">                    while (currentPoint.getRow() &gt; 0 &amp;&amp; this.getValueAtPoint(currentPoint) == origNum) {</span>
+<span class="fc" id="L201">                        this.movePoint(currentPoint, new Point(currentPoint.getRow() - 1, currentPoint.getCol()));</span>
+<span class="fc" id="L202">                        currentPoint = new Point(currentPoint.getRow() - 1, currentPoint.getCol());</span>
+<span class="fc" id="L203">                        reallyMoved = true;</span>
+                    }
+                }
+            }
+        }
+<span class="pc bpc" id="L208" title="1 of 2 branches missed.">        if (reallyMoved) {</span>
+<span class="fc" id="L209">            this.addPossibleNumber(2);</span>
+        }
+<span class="fc" id="L211">    }</span>
+
+    public void moveDown() {
+<span class="fc" id="L214">        boolean reallyMoved = false;</span>
+        Point currentPoint;
+        int origNum;
+<span class="fc bfc" id="L217" title="All 2 branches covered.">        for (int row = 2; row &gt;= 0; row--) {</span>
+<span class="fc bfc" id="L218" title="All 2 branches covered.">            for (int col = 0; col &lt; board[0].length; col++) {</span>
+<span class="fc bfc" id="L219" title="All 2 branches covered.">                if (board[row][col] &gt; 0) {</span>
+<span class="fc" id="L220">                    currentPoint = new Point(row, col);</span>
+<span class="fc" id="L221">                    origNum = board[row][col];</span>
+<span class="fc bfc" id="L222" title="All 4 branches covered.">                    while (currentPoint.getRow() &lt; 3 &amp;&amp; this.getValueAtPoint(currentPoint) == origNum) {</span>
+<span class="fc" id="L223">                        this.movePoint(currentPoint, new Point(currentPoint.getRow() + 1, currentPoint.getCol()));</span>
+<span class="fc" id="L224">                        currentPoint = new Point(currentPoint.getRow() + 1, currentPoint.getCol());</span>
+<span class="fc" id="L225">                        reallyMoved = true;</span>
+                    }
+                }
+            }
+        }
+<span class="pc bpc" id="L230" title="1 of 2 branches missed.">        if (reallyMoved) {</span>
+<span class="fc" id="L231">            this.addPossibleNumber(2);</span>
+        }
+<span class="fc" id="L233">    }</span>
+
+    public void checkMovePossible() {
+<span class="fc" id="L236">        int[][] oldBoard = new int[BOARD_SIZE][BOARD_SIZE];</span>
+<span class="fc" id="L237">        int sameCount = 0;</span>
+<span class="fc bfc" id="L238" title="All 2 branches covered.">        for (int i = 0; i &lt; board.length; i++) {</span>
+<span class="fc bfc" id="L239" title="All 2 branches covered.">            for (int j = 0; j &lt; board[0].length; j++) {</span>
+<span class="fc" id="L240">                oldBoard[i][j] = board[i][j];</span>
+            }
+        }
+<span class="fc" id="L243">        moveLeft();</span>
+<span class="fc" id="L244">        moveRight();</span>
+<span class="fc" id="L245">        moveUp();</span>
+<span class="fc" id="L246">        moveDown();</span>
+<span class="fc bfc" id="L247" title="All 2 branches covered.">        for (int i = 0; i &lt; board.length; i++) {</span>
+<span class="fc bfc" id="L248" title="All 2 branches covered.">            for (int j = 0; j &lt; board[0].length; j++) {</span>
+<span class="pc bpc" id="L249" title="1 of 2 branches missed.">                if (board[i][j] == oldBoard[i][j])</span>
+<span class="fc" id="L250">                    sameCount++;</span>
+            }
+        }
+<span class="pc bpc" id="L253" title="1 of 2 branches missed.">        if (sameCount == BOARD_SIZE * BOARD_SIZE)</span>
+<span class="fc" id="L254">            movePossible = false;</span>
+<span class="fc" id="L255">   }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>
