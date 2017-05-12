@@ -48,22 +48,6 @@ public class Board2048Test {
     }
 
     @Test
-    public void testAddNumberFromEdge() {
-        Board2048 test = new Board2048();
-        test.clearBoard();
-        test.addNumberFromEdge(2);
-        for (int i = 0; i < test.getBoard().length; i++) {
-            for (int j = 0; j < test.getBoard()[0].length; j++) {
-                if (test.getBoard()[i][j] == 2) {
-                    assertEquals(
-                            (i == 0 || j == 0 || i == test.getBoard().length - 1 || j == test.getBoard().length - 1),
-                            true);
-                }
-            }
-        }
-    }
-
-    @Test
     public void testMovePointWithEmtpyDest() {
         Board2048 test = new Board2048();
         test.clearBoard();
@@ -128,10 +112,7 @@ public class Board2048Test {
     public void testMoveLeftFullRow() {
         Board2048 test = new Board2048();
         test.clearBoard();
-        int[][] board = {{2, 2, 2, 2},
-                         {0, 0, 0, 0},
-                         {0, 0, 0, 0},
-                         {0, 0, 0, 0}};
+        int[][] board = { { 2, 2, 2, 2 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
         test.setBoard(board);
         test.moveLeft();
         assertEquals(test.getValueAtPoint(new Point(0, 0)), 4);
@@ -165,16 +146,12 @@ public class Board2048Test {
     public void testMoveRightFullRow() {
         Board2048 test = new Board2048();
         test.clearBoard();
-        int[][] board = {{2, 2, 2, 2},
-                         {0, 0, 0, 0},
-                         {0, 0, 0, 0},
-                         {0, 0, 0, 0}};
+        int[][] board = { { 2, 2, 2, 2 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
         test.setBoard(board);
         test.moveRight();
         assertEquals(test.getValueAtPoint(new Point(0, 3)), 4);
         assertEquals(test.getValueAtPoint(new Point(0, 2)), 4);
     }
-
 
     @Test
     public void testMoveUpSingle() {
@@ -203,10 +180,7 @@ public class Board2048Test {
     public void testMoveUpFullRow() {
         Board2048 test = new Board2048();
         test.clearBoard();
-        int[][] board = {{2, 0, 0, 0},
-                         {2, 0, 0, 0},
-                         {2, 0, 0, 0},
-                         {2, 0, 0, 0}};
+        int[][] board = { { 2, 0, 0, 0 }, { 2, 0, 0, 0 }, { 2, 0, 0, 0 }, { 2, 0, 0, 0 } };
         test.setBoard(board);
         test.moveUp();
         assertEquals(test.getValueAtPoint(new Point(0, 0)), 4);
@@ -240,13 +214,35 @@ public class Board2048Test {
     public void testMoveDownFullRow() {
         Board2048 test = new Board2048();
         test.clearBoard();
-        int[][] board = {{2, 0, 0, 0},
-                         {2, 0, 0, 0},
-                         {2, 0, 0, 0},
-                         {2, 0, 0, 0}};
+        int[][] board = { { 2, 0, 0, 0 }, { 2, 0, 0, 0 }, { 2, 0, 0, 0 }, { 2, 0, 0, 0 } };
         test.setBoard(board);
         test.moveDown();
         assertEquals(test.getValueAtPoint(new Point(3, 0)), 4);
         assertEquals(test.getValueAtPoint(new Point(2, 0)), 4);
+    }
+
+    @Test
+    public void testScoring() {
+        Board2048 test = new Board2048();
+        test.clearBoard();
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(0, 1);
+        test.addNewNumber(p1, 2);
+        test.addNewNumber(p2, 2);
+        test.moveLeft();
+        assertEquals(test.getScore(), 4);
+    }
+
+    @Test
+    public void testMovePossible() {
+        Board2048 test = new Board2048();
+        test.clearBoard();
+        int[][] board = { {2, 4, 8, 16},
+                          {16, 8, 4, 2},
+                          {2, 4, 8, 16},
+                          {16, 8, 4, 2} };
+        test.setBoard(board);
+        test.checkMovePossible();
+        assertEquals(test.isMovePossible(), false);
     }
 }

@@ -1,6 +1,7 @@
 package com.tkamat.game;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -11,8 +12,11 @@ import java.util.Random;
  */
 public class Board2048 {
 
+    public static final int BOARD_SIZE = 4;
+
     private int[][] board;
-    private static final int BOARD_SIZE = 4;
+    private int score;
+    private boolean movePossible;
 
     /**
      * Constructor for objects of Board2048 class
@@ -20,6 +24,8 @@ public class Board2048 {
     public Board2048() {
         this.board = new int[BOARD_SIZE][BOARD_SIZE];
         this.assignStartingNumbers(getRandomPoint(), getRandomPoint());
+        this.score = 0;
+        this.movePossible = true;
     }
 
     public int[][] getBoard() {
@@ -28,6 +34,34 @@ public class Board2048 {
 
     public void setBoard(int[][] board) {
         this.board = board;
+    }
+
+    /**
+     * @return movePossible
+     */
+    public boolean isMovePossible() {
+        return movePossible;
+    }
+
+    /**
+     * @param movePossible the movePossible to set
+     */
+    public void setMovePossible(boolean movePossible) {
+        this.movePossible = movePossible;
+    }
+
+    /**
+     * @return the score
+     */
+    public int getScore() {
+        return score;
+    }
+
+    /**
+     * @param score the score to set
+     */
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public int getValueAtPoint(Point p) {
@@ -83,18 +117,18 @@ public class Board2048 {
      * @param num
      *            value of number to add
      */
-    public void addNumberFromEdge(int num) {
+    public void addPossibleNumber(int num) {
         List<Point> possiblePoints = new ArrayList<Point>();
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                if (i == 0 || j == 0 || i == board.length - 1 || j == board[0].length - 1) {
-                    if (board[i][j] == 0)
-                        possiblePoints.add(new Point(i, j));
-                }
+                if (board[i][j] == 0)
+                    possiblePoints.add(new Point(i, j));
             }
 
-            Random rand = new Random();
-            addNewNumber(possiblePoints.get(rand.nextInt(possiblePoints.size())), num);
+            if (possiblePoints.size() > 0) {
+                Random rand = new Random();
+                addNewNumber(possiblePoints.get(rand.nextInt(possiblePoints.size())), num);
+            }
         }
     }
 
@@ -106,27 +140,34 @@ public class Board2048 {
         else if (this.getValueAtPoint(source) == this.getValueAtPoint(dest)) {
             board[dest.getRow()][dest.getCol()] = board[source.getRow()][source.getCol()] * 2;
             board[source.getRow()][source.getCol()] = 0;
+            score += this.getValueAtPoint(dest);
         }
     }
 
     public void moveLeft() {
+        boolean reallyMoved = false;
         Point currentPoint;
         int origNum;
         for (int col = 1; col < board[0].length; col++) {
             for (int row = 0; row < board.length; row++) {
-                if (board[row][col] > 0) {
+               if (board[row][col] > 0) {
                     currentPoint = new Point(row, col);
                     origNum = board[row][col];
                     while (currentPoint.getCol() > 0 && this.getValueAtPoint(currentPoint) == origNum) {
                         this.movePoint(currentPoint, new Point(currentPoint.getRow(), currentPoint.getCol() - 1));
                         currentPoint = new Point(currentPoint.getRow(), currentPoint.getCol() - 1);
+                        reallyMoved = true;
                     }
                 }
             }
         }
+        if (reallyMoved) {
+            this.addPossibleNumber(2);
+        }
     }
 
     public void moveRight() {
+        boolean reallyMoved = false;
         Point currentPoint;
         int origNum;
         for (int col = 2; col >= 0; col--) {
@@ -137,13 +178,18 @@ public class Board2048 {
                     while (currentPoint.getCol() < 3 && this.getValueAtPoint(currentPoint) == origNum) {
                         this.movePoint(currentPoint, new Point(currentPoint.getRow(), currentPoint.getCol() + 1));
                         currentPoint = new Point(currentPoint.getRow(), currentPoint.getCol() + 1);
+                        reallyMoved = true;
                     }
                 }
             }
         }
+        if (reallyMoved) {
+            this.addPossibleNumber(2);
+        }
     }
 
     public void moveUp() {
+        boolean reallyMoved = false;
         Point currentPoint;
         int origNum;
         for (int row = 1; row < board.length; row++) {
@@ -154,13 +200,18 @@ public class Board2048 {
                     while (currentPoint.getRow() > 0 && this.getValueAtPoint(currentPoint) == origNum) {
                         this.movePoint(currentPoint, new Point(currentPoint.getRow() - 1, currentPoint.getCol()));
                         currentPoint = new Point(currentPoint.getRow() - 1, currentPoint.getCol());
+                        reallyMoved = true;
                     }
                 }
             }
         }
+        if (reallyMoved) {
+            this.addPossibleNumber(2);
+        }
     }
 
     public void moveDown() {
+        boolean reallyMoved = false;
         Point currentPoint;
         int origNum;
         for (int row = 2; row >= 0; row--) {
@@ -171,10 +222,36 @@ public class Board2048 {
                     while (currentPoint.getRow() < 3 && this.getValueAtPoint(currentPoint) == origNum) {
                         this.movePoint(currentPoint, new Point(currentPoint.getRow() + 1, currentPoint.getCol()));
                         currentPoint = new Point(currentPoint.getRow() + 1, currentPoint.getCol());
+                        reallyMoved = true;
                     }
                 }
             }
         }
+        if (reallyMoved) {
+            this.addPossibleNumber(2);
+        }
     }
+
+    public void checkMovePossible() {
+        int[][] oldBoard = new int[BOARD_SIZE][BOARD_SIZE];
+        int sameCount = 0;
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                oldBoard[i][j] = board[i][j];
+            }
+        }
+        moveLeft();
+        moveRight();
+        moveUp();
+        moveDown();
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (board[i][j] == oldBoard[i][j])
+                    sameCount++;
+            }
+        }
+        if (sameCount == BOARD_SIZE * BOARD_SIZE)
+            movePossible = false;
+   }
 
 }

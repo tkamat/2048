@@ -14,7 +14,7 @@ set APP_BASE_NAME=%~n0
 set APP_HOME=%DIRNAME%..
 
 @rem Add default JVM options here. You can also use JAVA_OPTS and 2048_OPTS to pass JVM options to this script.
-set DEFAULT_JVM_OPTS=
+set DEFAULT_JVM_OPTS="-Xdebug" "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
 
 @rem Find java.exe
 if defined JAVA_HOME goto findJavaFromJavaHome
@@ -66,7 +66,7 @@ set CMD_LINE_ARGS=%*
 set CLASSPATH=%APP_HOME%\lib\2048.jar;%APP_HOME%\lib\guava-21.0.jar
 
 @rem Execute 2048
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %2048_OPTS%  -classpath "%CLASSPATH%" Runner %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %2048_OPTS%  -classpath "%CLASSPATH%" com.tkamat.Runner %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
