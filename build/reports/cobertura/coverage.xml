@@ -1,0 +1,1068 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="204" branches-covered="0" branches-valid="110" complexity="2.6666666666666665" version="2.1.1" timestamp="1494622378384">
+	<sources>
+		<source>/home/tushaar/Projects/2048/src/main/java</source>
+	</sources>
+	<packages>
+		<package name="com.tkamat" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="com.tkamat.Runner" filename="com/tkamat/Runner.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="14" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="main" signature="([Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="16" hits="0" branch="false"/>
+								<line number="22" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="14" hits="0" branch="false"/>
+						<line number="16" hits="0" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="com.tkamat.Runner$1" filename="com/tkamat/Runner.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="16" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="run" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="19" hits="0" branch="false"/>
+								<line number="20" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="16" hits="0" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="com.tkamat.game" line-rate="0.0" branch-rate="0.0" complexity="2.5833333333333335">
+			<classes>
+				<class name="com.tkamat.game.Board2048" filename="com/tkamat/game/Board2048.java" line-rate="0.0" branch-rate="0.0" complexity="3.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="24" hits="0" branch="false"/>
+								<line number="25" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="addNewNumber" signature="(Lcom/tkamat/game/Point;I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="111" hits="0" branch="false"/>
+								<line number="112" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="addPossibleNumber" signature="(I)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="121" hits="0" branch="false"/>
+								<line number="122" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="123" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="124" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="125" hits="0" branch="false"/>
+								<line number="128" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="129" hits="0" branch="false"/>
+								<line number="130" hits="0" branch="false"/>
+								<line number="133" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="assignStartingNumbers" signature="(Lcom/tkamat/game/Point;Lcom/tkamat/game/Point;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="98" hits="0" branch="false"/>
+								<line number="99" hits="0" branch="false"/>
+								<line number="100" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="checkMovePossible" signature="()V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="236" hits="0" branch="false"/>
+								<line number="237" hits="0" branch="false"/>
+								<line number="238" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="239" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="240" hits="0" branch="false"/>
+								<line number="243" hits="0" branch="false"/>
+								<line number="244" hits="0" branch="false"/>
+								<line number="245" hits="0" branch="false"/>
+								<line number="246" hits="0" branch="false"/>
+								<line number="247" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="248" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="249" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="250" hits="0" branch="false"/>
+								<line number="253" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="254" hits="0" branch="false"/>
+								<line number="255" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="clearBoard" signature="()V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="82" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="83" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="84" hits="0" branch="false"/>
+								<line number="87" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getBoard" signature="()[[I" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="32" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getRandomPoint" signature="()Lcom/tkamat/game/Point;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="77" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getScore" signature="()I" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="57" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getValueAtPoint" signature="(Lcom/tkamat/game/Point;)I" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="68" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="isMovePossible" signature="()Z" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="43" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="moveDown" signature="()V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="214" hits="0" branch="false"/>
+								<line number="217" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="218" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="219" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="220" hits="0" branch="false"/>
+								<line number="221" hits="0" branch="false"/>
+								<line number="222" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="223" hits="0" branch="false"/>
+								<line number="224" hits="0" branch="false"/>
+								<line number="225" hits="0" branch="false"/>
+								<line number="230" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="231" hits="0" branch="false"/>
+								<line number="233" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="moveLeft" signature="()V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="148" hits="0" branch="false"/>
+								<line number="151" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="152" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="153" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="154" hits="0" branch="false"/>
+								<line number="155" hits="0" branch="false"/>
+								<line number="156" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="157" hits="0" branch="false"/>
+								<line number="158" hits="0" branch="false"/>
+								<line number="159" hits="0" branch="false"/>
+								<line number="164" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="165" hits="0" branch="false"/>
+								<line number="167" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="movePoint" signature="(Lcom/tkamat/game/Point;Lcom/tkamat/game/Point;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="136" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="137" hits="0" branch="false"/>
+								<line number="138" hits="0" branch="false"/>
+								<line number="140" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="141" hits="0" branch="false"/>
+								<line number="142" hits="0" branch="false"/>
+								<line number="143" hits="0" branch="false"/>
+								<line number="145" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="moveRight" signature="()V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="170" hits="0" branch="false"/>
+								<line number="173" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="174" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="175" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="176" hits="0" branch="false"/>
+								<line number="177" hits="0" branch="false"/>
+								<line number="178" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="179" hits="0" branch="false"/>
+								<line number="180" hits="0" branch="false"/>
+								<line number="181" hits="0" branch="false"/>
+								<line number="186" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="187" hits="0" branch="false"/>
+								<line number="189" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="moveUp" signature="()V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="192" hits="0" branch="false"/>
+								<line number="195" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="196" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="197" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="198" hits="0" branch="false"/>
+								<line number="199" hits="0" branch="false"/>
+								<line number="200" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="201" hits="0" branch="false"/>
+								<line number="202" hits="0" branch="false"/>
+								<line number="203" hits="0" branch="false"/>
+								<line number="208" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="209" hits="0" branch="false"/>
+								<line number="211" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setBoard" signature="([[I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="36" hits="0" branch="false"/>
+								<line number="37" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setMovePossible" signature="(Z)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="50" hits="0" branch="false"/>
+								<line number="51" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setScore" signature="(I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="64" hits="0" branch="false"/>
+								<line number="65" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="24" hits="0" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="37" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="64" hits="0" branch="false"/>
+						<line number="65" hits="0" branch="false"/>
+						<line number="68" hits="0" branch="false"/>
+						<line number="77" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="82" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="83" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="84" hits="0" branch="false"/>
+						<line number="87" hits="0" branch="false"/>
+						<line number="98" hits="0" branch="false"/>
+						<line number="99" hits="0" branch="false"/>
+						<line number="100" hits="0" branch="false"/>
+						<line number="111" hits="0" branch="false"/>
+						<line number="112" hits="0" branch="false"/>
+						<line number="121" hits="0" branch="false"/>
+						<line number="122" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="123" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="124" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="125" hits="0" branch="false"/>
+						<line number="128" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="129" hits="0" branch="false"/>
+						<line number="130" hits="0" branch="false"/>
+						<line number="133" hits="0" branch="false"/>
+						<line number="136" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="137" hits="0" branch="false"/>
+						<line number="138" hits="0" branch="false"/>
+						<line number="140" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="141" hits="0" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+						<line number="143" hits="0" branch="false"/>
+						<line number="145" hits="0" branch="false"/>
+						<line number="148" hits="0" branch="false"/>
+						<line number="151" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="152" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="153" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="154" hits="0" branch="false"/>
+						<line number="155" hits="0" branch="false"/>
+						<line number="156" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="157" hits="0" branch="false"/>
+						<line number="158" hits="0" branch="false"/>
+						<line number="159" hits="0" branch="false"/>
+						<line number="164" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="165" hits="0" branch="false"/>
+						<line number="167" hits="0" branch="false"/>
+						<line number="170" hits="0" branch="false"/>
+						<line number="173" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="174" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="175" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="176" hits="0" branch="false"/>
+						<line number="177" hits="0" branch="false"/>
+						<line number="178" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="179" hits="0" branch="false"/>
+						<line number="180" hits="0" branch="false"/>
+						<line number="181" hits="0" branch="false"/>
+						<line number="186" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="187" hits="0" branch="false"/>
+						<line number="189" hits="0" branch="false"/>
+						<line number="192" hits="0" branch="false"/>
+						<line number="195" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="196" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="197" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="198" hits="0" branch="false"/>
+						<line number="199" hits="0" branch="false"/>
+						<line number="200" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="201" hits="0" branch="false"/>
+						<line number="202" hits="0" branch="false"/>
+						<line number="203" hits="0" branch="false"/>
+						<line number="208" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="209" hits="0" branch="false"/>
+						<line number="211" hits="0" branch="false"/>
+						<line number="214" hits="0" branch="false"/>
+						<line number="217" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="218" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="219" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="220" hits="0" branch="false"/>
+						<line number="221" hits="0" branch="false"/>
+						<line number="222" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="223" hits="0" branch="false"/>
+						<line number="224" hits="0" branch="false"/>
+						<line number="225" hits="0" branch="false"/>
+						<line number="230" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="231" hits="0" branch="false"/>
+						<line number="233" hits="0" branch="false"/>
+						<line number="236" hits="0" branch="false"/>
+						<line number="237" hits="0" branch="false"/>
+						<line number="238" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="239" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="240" hits="0" branch="false"/>
+						<line number="243" hits="0" branch="false"/>
+						<line number="244" hits="0" branch="false"/>
+						<line number="245" hits="0" branch="false"/>
+						<line number="246" hits="0" branch="false"/>
+						<line number="247" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="248" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="249" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="250" hits="0" branch="false"/>
+						<line number="253" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="254" hits="0" branch="false"/>
+						<line number="255" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="com.tkamat.game.Point" filename="com/tkamat/game/Point.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(II)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="19" hits="0" branch="false"/>
+								<line number="20" hits="0" branch="false"/>
+								<line number="21" hits="0" branch="false"/>
+								<line number="22" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCol" signature="()I" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getRow" signature="()I" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="28" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCol" signature="(I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="49" hits="0" branch="false"/>
+								<line number="50" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setRow" signature="(I)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="35" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="19" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="49" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="com.tkamat.ui" line-rate="0.0" branch-rate="0.0" complexity="3.4285714285714284">
+			<classes>
+				<class name="com.tkamat.ui.GUI2048" filename="com/tkamat/ui/GUI2048.java" line-rate="0.0" branch-rate="0.0" complexity="3.4285714285714284">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="26" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+								<line number="31" hits="0" branch="false"/>
+								<line number="33" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="36" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="37" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+								<line number="60" hits="0" branch="false"/>
+								<line number="61" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="false"/>
+								<line number="79" hits="0" branch="false"/>
+								<line number="97" hits="0" branch="false"/>
+								<line number="98" hits="0" branch="false"/>
+								<line number="116" hits="0" branch="false"/>
+								<line number="117" hits="0" branch="false"/>
+								<line number="118" hits="0" branch="false"/>
+								<line number="119" hits="0" branch="false"/>
+								<line number="120" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="access$000" signature="(Lcom/tkamat/ui/GUI2048;)Lcom/tkamat/game/Board2048;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="access$100" signature="(Lcom/tkamat/ui/GUI2048;)[[Ljavax/swing/JLabel;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+							</lines>
+						</method>
+						<method name="access$200" signature="(Lcom/tkamat/ui/GUI2048;)Ljava/util/HashMap;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="16" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="createTiles" signature="()[[Ljavax/swing/JLabel;" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="123" hits="0" branch="false"/>
+								<line number="124" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="125" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="126" hits="0" branch="false"/>
+								<line number="127" hits="0" branch="false"/>
+								<line number="128" hits="0" branch="false"/>
+								<line number="129" hits="0" branch="false"/>
+								<line number="130" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="131" hits="0" branch="false"/>
+								<line number="133" hits="0" branch="false"/>
+								<line number="136" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="initiaizeColorMap" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="140" hits="0" branch="false"/>
+								<line number="141" hits="0" branch="false"/>
+								<line number="142" hits="0" branch="false"/>
+								<line number="143" hits="0" branch="false"/>
+								<line number="144" hits="0" branch="false"/>
+								<line number="145" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="16" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="36" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="37" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="60" hits="0" branch="false"/>
+						<line number="61" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="79" hits="0" branch="false"/>
+						<line number="97" hits="0" branch="false"/>
+						<line number="98" hits="0" branch="false"/>
+						<line number="116" hits="0" branch="false"/>
+						<line number="117" hits="0" branch="false"/>
+						<line number="118" hits="0" branch="false"/>
+						<line number="119" hits="0" branch="false"/>
+						<line number="120" hits="0" branch="false"/>
+						<line number="123" hits="0" branch="false"/>
+						<line number="124" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="125" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="126" hits="0" branch="false"/>
+						<line number="127" hits="0" branch="false"/>
+						<line number="128" hits="0" branch="false"/>
+						<line number="129" hits="0" branch="false"/>
+						<line number="130" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="131" hits="0" branch="false"/>
+						<line number="133" hits="0" branch="false"/>
+						<line number="136" hits="0" branch="false"/>
+						<line number="140" hits="0" branch="false"/>
+						<line number="141" hits="0" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+						<line number="143" hits="0" branch="false"/>
+						<line number="144" hits="0" branch="false"/>
+						<line number="145" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="com.tkamat.ui.GUI2048$1" filename="com/tkamat/ui/GUI2048.java" line-rate="0.0" branch-rate="0.0" complexity="3.4285714285714284">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lcom/tkamat/ui/GUI2048;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="45" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="47" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="48" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="49" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+								<line number="54" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="42" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="47" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="48" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="49" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="com.tkamat.ui.GUI2048$2" filename="com/tkamat/ui/GUI2048.java" line-rate="0.0" branch-rate="0.0" complexity="3.4285714285714284">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lcom/tkamat/ui/GUI2048;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="61" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="64" hits="0" branch="false"/>
+								<line number="65" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="66" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="67" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="68" hits="0" branch="false"/>
+								<line number="71" hits="0" branch="false"/>
+								<line number="73" hits="0" branch="false"/>
+								<line number="76" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="61" hits="0" branch="false"/>
+						<line number="64" hits="0" branch="false"/>
+						<line number="65" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="66" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="67" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="68" hits="0" branch="false"/>
+						<line number="71" hits="0" branch="false"/>
+						<line number="73" hits="0" branch="false"/>
+						<line number="76" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="com.tkamat.ui.GUI2048$3" filename="com/tkamat/ui/GUI2048.java" line-rate="0.0" branch-rate="0.0" complexity="3.4285714285714284">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lcom/tkamat/ui/GUI2048;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="79" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="82" hits="0" branch="false"/>
+								<line number="83" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="84" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="85" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="86" hits="0" branch="false"/>
+								<line number="89" hits="0" branch="false"/>
+								<line number="91" hits="0" branch="false"/>
+								<line number="94" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="79" hits="0" branch="false"/>
+						<line number="82" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="84" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="85" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="86" hits="0" branch="false"/>
+						<line number="89" hits="0" branch="false"/>
+						<line number="91" hits="0" branch="false"/>
+						<line number="94" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="com.tkamat.ui.GUI2048$4" filename="com/tkamat/ui/GUI2048.java" line-rate="0.0" branch-rate="0.0" complexity="3.4285714285714284">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lcom/tkamat/ui/GUI2048;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="98" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="101" hits="0" branch="false"/>
+								<line number="102" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="103" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="104" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="105" hits="0" branch="false"/>
+								<line number="108" hits="0" branch="false"/>
+								<line number="110" hits="0" branch="false"/>
+								<line number="113" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="98" hits="0" branch="false"/>
+						<line number="101" hits="0" branch="false"/>
+						<line number="102" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="103" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="104" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="105" hits="0" branch="false"/>
+						<line number="108" hits="0" branch="false"/>
+						<line number="110" hits="0" branch="false"/>
+						<line number="113" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>

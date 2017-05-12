@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tkamat.Board2048Test" tests="21" skipped="0" failures="0" errors="0" timestamp="2017-05-12T03:24:33" hostname="tushaar-Lenovo-Z50-70" time="0.011">
+<testsuite name="com.tkamat.Board2048Test" tests="21" skipped="0" failures="0" errors="0" timestamp="2017-05-12T20:53:33" hostname="tushaar-Lenovo-Z50-70" time="0.009">
   <properties/>
   <testcase name="testMoveLeftSingle" classname="com.tkamat.Board2048Test" time="0.002"/>
   <testcase name="testStartingNumbers" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testClearBoard" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testAddingNewNumbers" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testMoveUpDoNothing" classname="com.tkamat.Board2048Test" time="0.0"/>
-  <testcase name="testMovePointNotCombineNumber" classname="com.tkamat.Board2048Test" time="0.001"/>
+  <testcase name="testMovePointNotCombineNumber" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testMovePointCombineNumber" classname="com.tkamat.Board2048Test" time="0.0"/>
-  <testcase name="testMoveLeftFullRow" classname="com.tkamat.Board2048Test" time="0.001"/>
+  <testcase name="testMoveLeftFullRow" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testBoardHasArray" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testMoveUpFullRow" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testMoveLeftDoNothing" classname="com.tkamat.Board2048Test" time="0.0"/>
@@ -16,7 +16,7 @@
   <testcase name="testMoveDownSingle" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testScoring" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testMovePossible" classname="com.tkamat.Board2048Test" time="0.0"/>
-  <testcase name="testMoveRightFullRow" classname="com.tkamat.Board2048Test" time="0.0"/>
+  <testcase name="testMoveRightFullRow" classname="com.tkamat.Board2048Test" time="0.001"/>
   <testcase name="testMoveUpSingle" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testMovePointWithEmtpyDest" classname="com.tkamat.Board2048Test" time="0.0"/>
   <testcase name="testMoveRightSingle" classname="com.tkamat.Board2048Test" time="0.0"/>
