@@ -237,12 +237,28 @@ public class Board2048Test {
     public void testMovePossible() {
         Board2048 test = new Board2048();
         test.clearBoard();
-        int[][] board = { {2, 4, 8, 16},
-                          {16, 8, 4, 2},
-                          {2, 4, 8, 16},
-                          {16, 8, 4, 2} };
+        int[][] board = { { 2, 4, 8, 16 }, { 16, 8, 4, 2 }, { 2, 4, 8, 16 }, { 16, 8, 4, 2 } };
         test.setBoard(board);
         test.checkMovePossible();
         assertEquals(test.isMovePossible(), false);
+    }
+
+    @Test
+    public void testReallyMoved() {
+        Board2048 test = new Board2048();
+        test.clearBoard();
+        Point p1 = new Point(1, 1);
+        test.addNewNumber(p1, 2);
+        test.moveLeft();
+        assertEquals(test.isBoardChanged(), true);
+    }
+
+    @Test
+    public void testDidNotReallyMove() {
+        Board2048 test = new Board2048();
+        test.clearBoard();
+        test.addNewNumber(new Point(0, 0), 2);
+        test.moveLeft();
+        assertEquals(test.isBoardChanged(), false);
     }
 }

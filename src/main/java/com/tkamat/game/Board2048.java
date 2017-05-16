@@ -17,6 +17,7 @@ public class Board2048 {
     private int[][] board;
     private int score;
     private boolean movePossible;
+    private boolean boardChanged;
 
     /**
      * Constructor for objects of Board2048 class
@@ -44,10 +45,26 @@ public class Board2048 {
     }
 
     /**
-     * @param movePossible the movePossible to set
+     * @param movePossible
+     *            the movePossible to set
      */
     public void setMovePossible(boolean movePossible) {
         this.movePossible = movePossible;
+    }
+
+    /**
+     * @return the reallyChanged
+     */
+    public boolean isBoardChanged() {
+        return boardChanged;
+    }
+
+    /**
+     * @param reallyChanged
+     *            the reallyChanged to set
+     */
+    public void setBoardChanged(boolean reallyChanged) {
+        this.boardChanged = reallyChanged;
     }
 
     /**
@@ -58,7 +75,8 @@ public class Board2048 {
     }
 
     /**
-     * @param score the score to set
+     * @param score
+     *            the score to set
      */
     public void setScore(int score) {
         this.score = score;
@@ -117,8 +135,21 @@ public class Board2048 {
      * @param num
      *            value of number to add
      */
-    public void addPossibleNumber(int num) {
+    public void addPossibleNumber() {
         List<Point> possiblePoints = new ArrayList<Point>();
+        Random randNum = new Random();
+        int num;
+        int index = randNum.nextInt(11);
+        if (index < 7) {
+            num = 2;
+        }
+        else if (index < 9) {
+            num = 4;
+        }
+        else {
+            num = 8;
+        }
+
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 if (board[i][j] == 0)
@@ -136,38 +167,39 @@ public class Board2048 {
         if (this.getValueAtPoint(dest) == 0) {
             board[dest.getRow()][dest.getCol()] = board[source.getRow()][source.getCol()];
             board[source.getRow()][source.getCol()] = 0;
+            boardChanged = true;
         }
         else if (this.getValueAtPoint(source) == this.getValueAtPoint(dest)) {
             board[dest.getRow()][dest.getCol()] = board[source.getRow()][source.getCol()] * 2;
             board[source.getRow()][source.getCol()] = 0;
             score += this.getValueAtPoint(dest);
+            boardChanged = true;
         }
     }
 
     public void moveLeft() {
-        boolean reallyMoved = false;
+        boardChanged = false;
         Point currentPoint;
         int origNum;
         for (int col = 1; col < board[0].length; col++) {
             for (int row = 0; row < board.length; row++) {
-               if (board[row][col] > 0) {
+                if (board[row][col] > 0) {
                     currentPoint = new Point(row, col);
                     origNum = board[row][col];
                     while (currentPoint.getCol() > 0 && this.getValueAtPoint(currentPoint) == origNum) {
                         this.movePoint(currentPoint, new Point(currentPoint.getRow(), currentPoint.getCol() - 1));
                         currentPoint = new Point(currentPoint.getRow(), currentPoint.getCol() - 1);
-                        reallyMoved = true;
                     }
                 }
             }
         }
-        if (reallyMoved) {
-            this.addPossibleNumber(2);
+        if (boardChanged) {
+            addPossibleNumber();
         }
     }
 
     public void moveRight() {
-        boolean reallyMoved = false;
+        boardChanged = false;
         Point currentPoint;
         int origNum;
         for (int col = 2; col >= 0; col--) {
@@ -178,18 +210,17 @@ public class Board2048 {
                     while (currentPoint.getCol() < 3 && this.getValueAtPoint(currentPoint) == origNum) {
                         this.movePoint(currentPoint, new Point(currentPoint.getRow(), currentPoint.getCol() + 1));
                         currentPoint = new Point(currentPoint.getRow(), currentPoint.getCol() + 1);
-                        reallyMoved = true;
                     }
                 }
             }
         }
-        if (reallyMoved) {
-            this.addPossibleNumber(2);
+        if (boardChanged) {
+            addPossibleNumber();
         }
     }
 
     public void moveUp() {
-        boolean reallyMoved = false;
+        boardChanged = false;
         Point currentPoint;
         int origNum;
         for (int row = 1; row < board.length; row++) {
@@ -200,18 +231,17 @@ public class Board2048 {
                     while (currentPoint.getRow() > 0 && this.getValueAtPoint(currentPoint) == origNum) {
                         this.movePoint(currentPoint, new Point(currentPoint.getRow() - 1, currentPoint.getCol()));
                         currentPoint = new Point(currentPoint.getRow() - 1, currentPoint.getCol());
-                        reallyMoved = true;
                     }
                 }
             }
         }
-        if (reallyMoved) {
-            this.addPossibleNumber(2);
+        if (boardChanged) {
+            addPossibleNumber();
         }
     }
 
     public void moveDown() {
-        boolean reallyMoved = false;
+        boardChanged = false;
         Point currentPoint;
         int origNum;
         for (int row = 2; row >= 0; row--) {
@@ -222,13 +252,12 @@ public class Board2048 {
                     while (currentPoint.getRow() < 3 && this.getValueAtPoint(currentPoint) == origNum) {
                         this.movePoint(currentPoint, new Point(currentPoint.getRow() + 1, currentPoint.getCol()));
                         currentPoint = new Point(currentPoint.getRow() + 1, currentPoint.getCol());
-                        reallyMoved = true;
                     }
                 }
             }
         }
-        if (reallyMoved) {
-            this.addPossibleNumber(2);
+        if (boardChanged) {
+            addPossibleNumber();
         }
     }
 
@@ -252,6 +281,6 @@ public class Board2048 {
         }
         if (sameCount == BOARD_SIZE * BOARD_SIZE)
             movePossible = false;
-   }
+    }
 
 }

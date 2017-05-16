@@ -112,8 +112,27 @@ public class GUI2048 extends JFrame {
                 }
             }
         });
+        panel.getInputMap().put(KeyStroke.getKeyStroke("R"), "restart");
+        panel.getActionMap().put("restart", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                board.clearBoard();
+                board.assignStartingNumbers(Board2048.getRandomPoint(), Board2048.getRandomPoint());
+                for (int i = 0; i < tiles.length; i++) {
+                    for (int j = 0; j < tiles.length; j++) {
+                        if (board.getBoard()[i][j] > 0) {
+                            tiles[i][j].setText("" + board.getBoard()[i][j]);
+                        }
+                        else {
+                            tiles[i][j].setText("");
+                        }
+                        tiles[i][j].setBackground(colorMap.get(new Integer(board.getBoard()[i][j])));
+                    }
+                }
+            }
+            });
 
-        this.setSize(400, 400);
+        this.setSize(700, 700);
         this.add(panel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
@@ -142,6 +161,12 @@ public class GUI2048 extends JFrame {
         colorMap.put(new Integer(2), new Color(239, 190, 110));
         colorMap.put(new Integer(4), new Color(232, 148, 11));
         colorMap.put(new Integer(8), new Color(132, 83, 2));
+        colorMap.put(new Integer(16), new Color(209, 244, 66));
+        colorMap.put(new Integer(32), new Color(147, 181, 10));
+        colorMap.put(new Integer(64), new Color(239, 115, 91));
+        colorMap.put(new Integer(128), new Color(239, 73, 40));
+        colorMap.put(new Integer(256), new Color(239, 11, 65));
+
     }
 
 }

@@ -42,7 +42,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-applicationDefaultJvmArgs = ["-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"]
+// applicationDefaultJvmArgs = ["-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"]
 
 // Define the main class for the application
 mainClassName = 'com.tkamat.Runner'
